@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <title>catvsdog</title>
+        
+    </head>
+   <style>
+   @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css');
+   #leftHalf {
+   background-image: url("static/img/catabst.jpg");
+   width: 50%;
+   position: absolute;
+   left: 0px;
+   height: 100%;
+   background-repeat: no-repeat;
+    }
+#rightHalf {
+   background-image: url("static/img/dogabst.jpg");
+   width: 50%;
+   position: absolute;
+    right:-150px;
+   height: 100%;
+   background-repeat: no-repeat;
+}
+   .row-centered {
+    text-align:center;
+}
+.colstyle{
+    width:500px;
+    background-color: #ccc;
+    border: 1px solid #ddd;
+}
+.dyndiv{
+    height: 100vh;
+    width:100vh;
+}
+   
+   </style>
+   
+    <body>
+        <div id="leftHalf"
+        ></div>
+        <div id="rightHalf"></div>
+        <div class="container">
+                
+                <div class="mx-auto colstyle">
+                    <div class="dyndiv">
+                        <br><br>
+                        <h4 style="margin-left: 24%;">Cat vs Dog</h4>
+                    <form action="/upload" method="post" enctype="multipart/form-data" >
+                        {% if imgname %}
+                    <img src="../static/uploads/{{ imgname }}" name="cdimg" height="500px" width="500px"/>
+
+                    <p style="margin-left: 16%;">Predicted : {{answer}}, Confidence : {{conf}}%</p>
+                        {% endif %}
+            <label style="margin-left: 15%;" class="btn btn-default btn-file">
+                Browse 
+                <input type="file" name="image" >
+            </label>
+
+            <br>
+            <input style="margin-left: 25%;" type="submit" value="upload" class="btn btn-primary">
+        </form>
+        </div>
+        </div>
+        <div>
+                </div>
+        </div>
+        
+        
+   </body>
+</html>

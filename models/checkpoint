@@ -1,0 +1,2 @@
+model_checkpoint_path: "E:\\programs\\compvis\\catvsdog\\models\\default.tfl"
+all_model_checkpoint_paths: "E:\\programs\\compvis\\catvsdog\\models\\default.tfl"
